@@ -1,0 +1,90 @@
+*,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    background: rgb(196, 1, 255);
+    padding: 1px;
+    color: aliceblue;
+}
+
+.header h2 {
+    font-size: 2rem;
+}
+
+
+/* main area */
+
+.main {
+    margin: 0 auto;
+    max-width: 920px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* input area */
+
+.add-product-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    background: rgb(213, 5, 255);
+    padding: 5px 15px;
+    border: none;
+    border-radius: 50px;
+    color: aliceblue;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.btn:hover {
+    background: rgb(5, 30, 255);
+}
+
+.add-product-area input {
+    border: 1px solid rgb(213, 5, 255);
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+.add-product-area input:focus,
+.add-product-area input:focus-visible {
+    border: 1px solid rgb(5, 163, 255);
+    color: rgb(5, 163, 255);
+    outline: 0;
+}
+
+.add-product-area input::placeholder {
+    font-size: 10px;
+    color: rgb(213, 5, 255);
+}
+
+
+/* table */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid rgb(213, 5, 255);
+    text-align: left;
+    padding: 8px;
+}
+
+@media only screen and (max-width: 670px) {
+    .add-product-area {
+        flex-direction: column;
+    }
+}
