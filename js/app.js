@@ -7,7 +7,6 @@ const addProduct = () => {
     if (!productNameValue || !productNumberValue) {
         return;
     }
-    displyResult(productNameValue, productNumberValue)
     setProduct(productNameValue, productNumberValue)
     productName.value = '';
     productNumber.value = '';
@@ -16,22 +15,26 @@ const addProduct = () => {
 
 // set prodat localstor
 
-const displyResult = (name, number) => {
+const displyResult = () => {
     const showDisplay = document.getElementById('add-items');
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-            <tr>
-            <td>${name}</td>
-            <td>${number}</td>
-            </tr>
-            `
-    showDisplay.appendChild(tr);
+    const product = JSON.parse(localStorage.getItem('product')) ? JSON.parse(localStorage.getItem('product')) : [];
+    product.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+                <tr>
+                <td>${item.name}</td>
+                <td>${item.quadientity}</td>
+                </tr>
+                `
+        showDisplay.appendChild(tr);
+    });
+
 }
+displyResult()
 
 const setProduct = (name, quadientity) => {
     let produtRecord = new Array();
-    console.log(produtRecord)
-    produtRecord = JSON.parse(localStorage.getItem('product')) ? JSON.parse(localStorage.getItem('product')) : "";
+    produtRecord = JSON.parse(localStorage.getItem('product')) ? JSON.parse(localStorage.getItem('product')) : [];
     produtRecord.push({
         "name": name,
         "quadientity": quadientity
