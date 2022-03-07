@@ -4,8 +4,9 @@ const addProduct = () => {
         const productNameValue = productName.value;
         const productNumber = document.getElementById('quadientity');
         const productNumberValue = productNumber.value;
-        if (!productNameValue || !productNumberValue) {
+        if (!productNameValue || !productNumberValue || productNumberValue < 0) {
             alert("Please Input Field can't empity")
+            location.reload()
             return;
         }
         setProduct(productNameValue, productNumberValue);
