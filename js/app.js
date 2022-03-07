@@ -40,14 +40,19 @@ const displyResult = () => {
 displyResult()
 
 const setProduct = (name, quadientity) => {
-    let produtRecord = new Array();
-    produtRecord = JSON.parse(localStorage.getItem('product')) ? JSON.parse(localStorage.getItem('product')) : [];
-    produtRecord.unshift({
-        "name": name,
-        "quadientity": quadientity
-    })
+        let produtRecord = new Array();
+        produtRecord = JSON.parse(localStorage.getItem('product')) ? JSON.parse(localStorage.getItem('product')) : [];
+        produtRecord.push({
+            "name": name,
+            "quadientity": quadientity
+        })
 
-    const productObj = JSON.stringify(produtRecord);
-    localStorage.setItem("product", productObj);
+        const productObj = JSON.stringify(produtRecord);
+        localStorage.setItem("product", productObj);
 
+    }
+    // clear data
+const clearData = () => {
+    localStorage.clear();
+    location.reload()
 }
